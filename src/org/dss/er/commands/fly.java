@@ -1,6 +1,7 @@
 package org.dss.er.commands;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -18,24 +19,29 @@ public class fly implements CommandExecutor {
 						if(args[0].contains("on")) {
 							p.setAllowFlight(true);
 							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a&lFLYING ENABLED"));
+							p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 100, 0);
 							return false;
 						}
 						if(args[0].contains("off")) {
 							p.setAllowFlight(false);
 							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lFLYING DISABLED"));
+							p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 100, 0);
 							return false;
 						}
 					}
 					if(args.length >1) {
 						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lTOO MUCH ARGUMENTS"));
+						p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 100, 0);
 						return false;
 					}
 					if(args.length <1) {
 						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lTOO LESS ARGUMENTS"));
+						p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 100, 0);
 						return false;
 					}
 				}else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lYOU DON'T HAVE PERMISSION TO DO THIS"));
+					p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_USE, 100, 0);
 					return false;
 				}
 			}

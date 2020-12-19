@@ -6,3 +6,6 @@ commands:
   gm:
   raid:
   fly:
+  broadcast:
+    aliases: bc
+  chatclear:
