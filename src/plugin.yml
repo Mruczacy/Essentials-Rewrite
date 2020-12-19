@@ -2,3 +2,6 @@ name: Essentials-Rewrite
 version: 0.0.1
 main: org.dss.er.Main
 author: Danzo-Systems-Software
+commands:
+  gm:
+  raid:
