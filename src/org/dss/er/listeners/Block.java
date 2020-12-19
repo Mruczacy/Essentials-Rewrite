@@ -4,6 +4,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.dss.er.Main;
 
 import net.md_5.bungee.api.ChatColor;
@@ -33,6 +34,13 @@ public class Block implements Listener {
 			e.setCancelled(true);
 			e.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lAdministration enabled ANTI-RAID system. In this case you can't destroy and place blocks"));
 			return;
+		}
+	}
+	
+	@EventHandler
+	public void onEndermanBlockPick(EntityChangeBlockEvent e) {
+		if(Main.raidbool==true) {
+			e.setCancelled(true);
 		}
 	}
 }
