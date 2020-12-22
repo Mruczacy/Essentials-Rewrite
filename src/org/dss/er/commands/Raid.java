@@ -15,33 +15,37 @@ public class Raid implements CommandExecutor {
 		if(cmd.getName().equalsIgnoreCase("raid")) {
 			if(sender instanceof Player) {
 				Player p = (Player) sender;
-				if(args.length ==1) {
-					if(args[0].contains("on")) {
-						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lAnti-raid secure enabled"));
-						org.dss.er.Main.raidbool=true;
-						p.playSound(p.getLocation(), Sound.ENTITY_ZOMBIE_AMBIENT, 100, 0);
+				if(p.hasPermission("essentials.*")||p.hasPermission("essentials.raid")||p.isOp()==true) {
+					if(args.length ==1) {
+						if(args[0].contains("on")) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lAnti-raid secure enabled"));
+							org.dss.er.Main.raidbool=true;
+							p.playSound(p.getLocation(), Sound.ENTITY_ZOMBIE_AMBIENT, 100, 0);
+							return false;
+						}
+						if(args[0].contains("of")) {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lAnti-raid secure disabled"));
+							org.dss.er.Main.raidbool=false;
+							p.playSound(p.getLocation(), Sound.ENTITY_ZOMBIE_DEATH, 100, 0);
+							return false;
+						}
+						else {
+							p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lCorrect first argument is on/off"));
+							return false;
+						}
+					}
+					if(args.length < 1) {
+						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lToo less arguments!!!"));
+						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a&lCorrect scheme of command usage /raid <on/off>"));
 						return false;
 					}
-					if(args[0].contains("of")) {
-						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b&lAnti-raid secure disabled"));
-						org.dss.er.Main.raidbool=false;
-						p.playSound(p.getLocation(), Sound.ENTITY_ZOMBIE_DEATH, 100, 0);
+					if(args.length > 1) {
+						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lToo much arguments!!!"));
+						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a&lCorrect scheme of command usage /raid <on/off>"));
 						return false;
 					}
-					else {
-						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lCorrect first argument is on/off"));
-						return false;
-					}
-				}
-				if(args.length < 1) {
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lToo less arguments!!!"));
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a&lCorrect scheme of command usage /raid <on/off>"));
-					return false;
-				}
-				if(args.length > 1) {
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lToo much arguments!!!"));
-					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a&lCorrect scheme of command usage /raid <on/off>"));
-					return false;
+				} else {
+					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lNie masz permisji"));
 				}
 			} else {
 				if(args.length ==1) {
