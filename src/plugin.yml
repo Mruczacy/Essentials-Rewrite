@@ -9,3 +9,5 @@ commands:
   broadcast:
     aliases: bc
   chatclear:
+  feed:
+  heal:

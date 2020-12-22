@@ -5,10 +5,12 @@ import org.dss.er.Main;
 public class CommandMain {
 
 	public static void RegisterCommands() {
-		Main.getInstance().getCommand("gm").setExecutor(new gm());
-		Main.getInstance().getCommand("raid").setExecutor(new raid());
-		Main.getInstance().getCommand("fly").setExecutor(new fly());
-		Main.getInstance().getCommand("broadcast").setExecutor(new broadcast());
-		Main.getInstance().getCommand("chatclear").setExecutor(new chatclear());
+		Main.getInstance().getCommand("gm").setExecutor(new Gm());
+		Main.getInstance().getCommand("raid").setExecutor(new Raid());
+		Main.getInstance().getCommand("fly").setExecutor(new Fly());
+		Main.getInstance().getCommand("broadcast").setExecutor(new Broadcast());
+		Main.getInstance().getCommand("chatclear").setExecutor(new Chatclear());
+		Main.getInstance().getCommand("feed").setExecutor(new Feed());
+		Main.getInstance().getCommand("heal").setExecutor(new Heal());
 	}
 }
