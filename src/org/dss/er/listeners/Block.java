@@ -1,13 +1,12 @@
 package org.dss.er.listeners;
 
+import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.dss.er.Main;
-
-import net.md_5.bungee.api.ChatColor;
 
 public class Block implements Listener {
 

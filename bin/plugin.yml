@@ -11,3 +11,4 @@ commands:
   chatclear:
   feed:
   heal:
+  ereload:

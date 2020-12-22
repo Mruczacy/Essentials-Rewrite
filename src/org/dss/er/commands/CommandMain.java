@@ -12,5 +12,6 @@ public class CommandMain {
 		Main.getInstance().getCommand("chatclear").setExecutor(new Chatclear());
 		Main.getInstance().getCommand("feed").setExecutor(new Feed());
 		Main.getInstance().getCommand("heal").setExecutor(new Heal());
+		Main.getInstance().getCommand("ereload").setExecutor(new Reload());
 	}
 }
