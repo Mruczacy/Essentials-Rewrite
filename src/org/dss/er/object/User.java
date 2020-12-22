@@ -7,10 +7,10 @@ public class User {
 	
 	private String name;
 	private UUID uuid;
-	private List<UUID> teammates;
+	private List<String> teammates;
 	private List<Home> homes;
 	
-	public User(String name, UUID uuid, List<UUID> teammates, List<Home> homes) {
+	public User(String name, UUID uuid, List<String> teammates, List<Home> homes) {
 		this.name = name;
 		this.uuid = uuid;
 		this.teammates = teammates;
@@ -29,10 +29,10 @@ public class User {
 	public void setUuid(UUID uuid) {
 		this.uuid = uuid;
 	}
-	public List<UUID> getTeammates() {
+	public List<String> getTeammates() {
 		return teammates;
 	}
-	public void setTeammates(List<UUID> teammates) {
+	public void setTeammates(List<String> teammates) {
 		this.teammates = teammates;
 	}
 	public List<Home> getHomes() {

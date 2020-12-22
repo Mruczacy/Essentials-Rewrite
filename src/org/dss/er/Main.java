@@ -2,6 +2,7 @@ package org.dss.er;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.dss.er.commands.CommandMain;
+import org.dss.er.data.MYSQL;
 import org.dss.er.listeners.ListenersMain;
 
 public class Main extends JavaPlugin {
@@ -17,5 +18,6 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		CommandMain.RegisterCommands();
 		ListenersMain.RegisterListeners();
+		MYSQL.onInit();
 	}
 }
