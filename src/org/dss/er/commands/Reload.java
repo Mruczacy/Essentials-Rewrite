@@ -2,6 +2,7 @@ package org.dss.er.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -22,6 +23,8 @@ public class Reload implements CommandExecutor {
 				if(p.hasPermission("essentials.reload") || p.hasPermission("essentials.*") || p.isOp()==true){
 					plugin.reloadConfig();
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aConfiguration file reloaded."));
+					System.out.println("Configuration file reloaded.");
+					p.playSound(p.getLocation(), Sound.ENTITY_WITHER_DEATH, 100, 0);
 					return false;
 				}else {
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&4&lYou don't have enough permissions to do it!!!"));

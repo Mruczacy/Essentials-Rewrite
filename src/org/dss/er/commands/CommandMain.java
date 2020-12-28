@@ -13,5 +13,6 @@ public class CommandMain {
 		Main.getInstance().getCommand("feed").setExecutor(new Feed());
 		Main.getInstance().getCommand("heal").setExecutor(new Heal());
 		Main.getInstance().getCommand("ereload").setExecutor(new Reload());
+		Main.getInstance().getCommand("thor").setExecutor(new Thor());
 	}
 }
