@@ -1,18 +1,17 @@
 package org.dss.er.object;
 
-import org.bukkit.World;
-
 public class Home {
 
-	private World world;
+	private int id;
+	private String worldname;
 	private int x;
 	private int y;
 	private int z;
 	private String name;
 	private int used;
 	
-	public Home(World w, int x, int y, int z, String name, int used) {
-		this.world = w;
+	public Home(int id, String w, int x, int y, int z, String name, int used) {
+		this.worldname = w;
 		this.x = x;
 		this.y = y;
 		this.z = z;
@@ -20,11 +19,19 @@ public class Home {
 		this.used = used;
 	}
 	
-	public World getWorld() {
-		return world;
+	public int getID() { 
+		return id;
 	}
-	public void setWorld(World world) {
-		this.world = world;
+	
+	public void setID(int id) {
+		this.id = id;
+	}
+	
+	public String getWorld() {
+		return worldname;
+	}
+	public void setWorld(String world) {
+		this.worldname = world;
 	}
 	public int getX() {
 		return x;

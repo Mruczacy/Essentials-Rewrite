@@ -14,5 +14,6 @@ public class CommandMain {
 		Main.getInstance().getCommand("heal").setExecutor(new Heal());
 		Main.getInstance().getCommand("ereload").setExecutor(new Reload());
 		Main.getInstance().getCommand("thor").setExecutor(new Thor());
+		Main.getInstance().getCommand("mate").setExecutor(new Mate());
 	}
 }
