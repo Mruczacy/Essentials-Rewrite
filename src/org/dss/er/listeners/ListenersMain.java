@@ -10,5 +10,6 @@ public class ListenersMain {
 		Bukkit.getPluginManager().registerEvents(new Block(), Main.getInstance());
 		Bukkit.getPluginManager().registerEvents(new EntityExplode(), Main.getInstance());
 		Bukkit.getPluginManager().registerEvents(new Join(), Main.getInstance());
+		Bukkit.getPluginManager().registerEvents(new Attack(), Main.getInstance());
 	}
 }
