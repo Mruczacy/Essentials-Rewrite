@@ -29,8 +29,8 @@ public class Kick implements CommandExecutor {
 						p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lNo such player could be found!"));
 						return true;
 					}
-					p1.kickPlayer(ChatColor.translateAlternateColorCodes('&', "&c&lYou got kicked from server!"));
-					Bukkit.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', "Player " + p1.getName() + " has been kicked!"));
+					p1.kickPlayer(ChatColor.translateAlternateColorCodes('&', "&c&lYou got kicked from server by &f&l" + p.getName()));
+					Bukkit.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&cPlayer &f" + p1.getName() + " has been kicked by &f" + p.getName()));
 					p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 100, 0);
 					return false;
 				}
